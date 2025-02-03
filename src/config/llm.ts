@@ -113,8 +113,7 @@ export const getLLMConfig = () => {
       HUGGINGFACE_API_KEY: z.string().optional(),
 
       ENABLED_SENSENOVA: z.boolean(),
-      SENSENOVA_ACCESS_KEY_ID: z.string().optional(),
-      SENSENOVA_ACCESS_KEY_SECRET: z.string().optional(),
+      SENSENOVA_API_KEY: z.string().optional(),
 
       ENABLED_XAI: z.boolean(),
       XAI_API_KEY: z.string().optional(),
@@ -124,6 +123,9 @@ export const getLLMConfig = () => {
 
       ENABLED_HIGRESS: z.boolean(),
       HIGRESS_API_KEY: z.string().optional(),
+
+      ENABLED_DOUBAO: z.boolean(),
+      DOUBAO_API_KEY: z.string().optional(),
     },
     runtimeEnv: {
       API_KEY_SELECT_MODE: process.env.API_KEY_SELECT_MODE,
@@ -234,10 +236,8 @@ export const getLLMConfig = () => {
       ENABLED_HUGGINGFACE: !!process.env.HUGGINGFACE_API_KEY,
       HUGGINGFACE_API_KEY: process.env.HUGGINGFACE_API_KEY,
 
-      ENABLED_SENSENOVA:
-        !!process.env.SENSENOVA_ACCESS_KEY_ID && !!process.env.SENSENOVA_ACCESS_KEY_SECRET,
-      SENSENOVA_ACCESS_KEY_ID: process.env.SENSENOVA_ACCESS_KEY_ID,
-      SENSENOVA_ACCESS_KEY_SECRET: process.env.SENSENOVA_ACCESS_KEY_SECRET,
+      ENABLED_SENSENOVA: !!process.env.SENSENOVA_API_KEY,
+      SENSENOVA_API_KEY: process.env.SENSENOVA_API_KEY,
 
       ENABLED_XAI: !!process.env.XAI_API_KEY,
       XAI_API_KEY: process.env.XAI_API_KEY,
@@ -247,6 +247,9 @@ export const getLLMConfig = () => {
 
       ENABLED_HIGRESS: !!process.env.HIGRESS_API_KEY,
       HIGRESS_API_KEY: process.env.HIGRESS_API_KEY,
+
+      ENABLED_DOUBAO: !!process.env.DOUBAO_API_KEY,
+      DOUBAO_API_KEY: process.env.DOUBAO_API_KEY,
     },
   });
 };
